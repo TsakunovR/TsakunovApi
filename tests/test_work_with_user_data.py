@@ -21,7 +21,7 @@ def test_user_delete():
         assert response.status_code == 204
 
 
-json_file = open('./users_credentials.json')
+json_file = open('users_credentials.json')
 users_credentials = json.load(json_file)
 
 

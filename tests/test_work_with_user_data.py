@@ -23,17 +23,17 @@ def test_user_delete():
 
 
 # json_file = open('users_credentials.json')
-# users_credentials = json.load(json_file)
+users_credentials = [{"name": "Roman", "job": "tester"}, {"names": "Anton", "job": "developer"}, {"names": "Ivan", "job": "project"}]
 
 
-# @pytest.mark.parametrize("user_credentials", users_credentials)
-# def test_create_user(user_credentials):
-#     headers = {'Content-Type': 'application/json'}
-#     response = httpx.post(BASE_URL, json=user_credentials, headers=headers)
-#     response_date = response.json()['createdAt'].replace('T', ' ')
-#     current_date = str(datetime.datetime.utcnow())
-#
-#     assert response_date[0:16] == current_date[0:16]
+@pytest.mark.parametrize("user_credentials", users_credentials)
+def test_create_user(user_credentials):
+    headers = {'Content-Type': 'application/json'}
+    response = httpx.post(BASE_URL, json=user_credentials, headers=headers)
+    response_date = response.json()['createdAt'].replace('T', ' ')
+    current_date = str(datetime.datetime.utcnow())
+
+    assert response_date[0:16] == current_date[0:16]
 
 
 def test_successfull_login():

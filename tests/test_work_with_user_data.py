@@ -22,7 +22,6 @@ def test_user_delete():
         assert response.status_code == 204
 
 
-print(os.getcwd())
 # json_file = open('users_credentials.json')
 # users_credentials = json.load(json_file)
 
@@ -38,6 +37,7 @@ print(os.getcwd())
 
 
 def test_successfull_login():
+    print("Путь" + os.getcwd())
     users_login_password = {
         "email": "eve.holt@reqres.in",
         "password": "cityslicka"

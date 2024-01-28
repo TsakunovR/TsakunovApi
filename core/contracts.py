@@ -9,3 +9,11 @@ USER_DATA_SCHEMA = {
     },
     "required": ["id", "email", "first_name", "last_name", "avatar"]
 }
+
+SUCCESSFULL_LOGIN_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "token": {"type": "string"}
+    },
+    "required": ["token"]
+}

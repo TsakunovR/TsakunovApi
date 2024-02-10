@@ -12,4 +12,3 @@ def test_delayed_response():
 
     assert response.status_code == 200
     print(response.json())
-    
